@@ -1,0 +1,12 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" class="imgHero" data-edit="img" title="{{item.name}}" height="128" width="128"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+    </header>
+    <hr />
+    <table class="attribut">
+        <tr><td>Activation</td><td><input type="text" name="system.Activation" value="{{item.system.Activation}}"></td></tr>
+        <tr><td colspan="2"><textarea name="system.Description" cols="30" rows="10">{{item.system.Description}}</textarea></td></tr>
+        <tr><td>Effet :</td><td><textarea name="system.Effet" cols="30" rows="10">{{item.system.Effet}}</textarea></td></tr>
+    </table>
+</form>

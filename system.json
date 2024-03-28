@@ -1,0 +1,242 @@
+{
+  "id": "metadv",
+  "title": "Metal Adventures 1.5",
+  "description": "Système pour Metal Adventures 1.5",
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/metadv/assets/thumbnail-metal-adventures.webp",
+      "thumbnail": "systems/metadv/assets/thumbnail-metal-adventures.webp",
+      "loop": false,
+      "flags": {}
+    }
+  ],
+  "version": "1.3.0",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11.315",
+    "maximum": "11"
+  },
+  "scripts":["module/apps/logo.js"],
+  "authors": [
+    {
+      "name": "Sylvain (Stanyjdr)",
+      "email": "stanys6@gmail.com",
+      "discord": "stany85",
+      "flags": {}
+    },
+    {
+      "name": "Christophe (sasmira)",
+      "email": "",
+      "discord": "sasmira",
+      "flags": {}
+    }
+  ],
+  "esmodules": [
+    "module/apps/chat.js",
+    "module/metadv.mjs"
+  ],
+  "styles": [
+    "css/compatibility.css",
+    "css/metadv.css"
+  ],
+  "socket": true,
+  "packs": [
+    {
+      "name": "metadv-objets",
+      "label": "Objets",
+      "path": "packs/metadv-objets",
+      "type": "Item",
+      "banner": "systems/metadv/assets/banners/banner_objets.webp",
+      "system": "metadv",
+      "ownership": {
+          "PLAYER": "LIMITED",
+          "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+  },
+    {
+      "name": "metadv-motivations",
+      "label": "Motivations",
+      "path": "packs/metadv-motivations",
+      "type": "Item",
+      "banner": "systems/metadv/assets/banners/banner_motivations.webp",
+      "system": "metadv",
+      "ownership": {
+          "PLAYER": "LIMITED",
+          "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+  },
+    {
+      "name": "metadv-armes",
+      "label": "Armes",
+      "path": "packs/metadv-armes",
+      "type": "Item",
+      "banner": "systems/metadv/assets/banners/banner_armes.webp",
+      "system": "metadv",
+      "ownership": {
+          "PLAYER": "LIMITED",
+          "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+  },
+    {
+      "name": "metadv-armures",
+      "label": "Armures",
+      "path": "packs/metadv-armures",
+      "type": "Item",
+      "banner": "systems/metadv/assets/banners/banner_armures.webp",
+      "system": "metadv",
+      "ownership": {
+          "PLAYER": "LIMITED",
+          "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+  },
+    {
+      "name": "metadv-accessoires",
+      "label": "Accessoires de vaisseau",
+      "path": "packs/metadv-accessoires",
+      "type": "Item",
+      "banner": "systems/metadv/assets/banners/banner_accessoires.webp",
+      "system": "metadv",
+      "ownership": {
+          "PLAYER": "LIMITED",
+          "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+  },
+    {
+      "name": "metadv-mutations",
+      "label": "Mutations",
+      "path": "packs/metadv-mutations",
+      "type": "Item",
+      "banner": "systems/metadv/assets/banners/banner_mutations.webp",
+      "system": "metadv",
+      "ownership": {
+          "PLAYER": "LIMITED",
+          "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+  },
+  {
+    "name": "metadv-aptitudes",
+    "label": "Aptitudes",
+    "path": "packs/metadv-aptitudes",
+    "type": "Item",
+    "banner": "systems/metadv/assets/banners/banner_aptitudes.webp",
+    "system": "metadv",
+    "ownership": {
+        "PLAYER": "LIMITED",
+        "ASSISTANT": "OWNER"
+    },
+    "flags": {}
+},
+    {
+      "name": "metadv-archetypes",
+      "label": "Archetypes",
+      "path": "packs/metadv-archetypes",
+      "type": "Item",
+      "banner": "systems/metadv/assets/banners/banner_archetypes.webp",
+      "system": "metadv",
+      "ownership": {
+          "PLAYER": "LIMITED",
+          "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+  },
+    {
+      "name": "metadv-origines",
+      "label": "Origines",
+      "path": "packs/metadv-origines",
+      "type": "Item",
+      "banner": "systems/metadv/assets/banners/banner_origines.webp",
+      "system": "metadv",
+      "ownership": {
+          "PLAYER": "LIMITED",
+          "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+  },
+    {
+      "name": "metadv-traits",
+      "label": "Traits",
+      "path": "packs/metadv-traits",
+      "type": "Item",
+      "banner": "systems/metadv/assets/banners/banner_traits.webp",
+      "system": "metadv",
+      "ownership": {
+          "PLAYER": "LIMITED",
+          "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+  },
+    {
+    "name": "metadv-vaisseaux",
+    "label": "Vaisseaux",
+    "path": "packs/metadv-vaisseaux",
+    "type": "Actor",
+    "banner": "systems/metadv/assets/banners/banner_vaisseaux.webp",
+    "system": "metadv",
+    "ownership": {
+        "PLAYER": "LIMITED",
+        "ASSISTANT": "OWNER"
+    },
+    "flags": {}
+},
+{
+  "name": "metadv-pnj",
+  "label": "PNJ",
+  "path": "packs/metadv-pnj",
+  "type": "Actor",
+  "banner": "systems/metadv/assets/banners/banner_actor.webp",
+  "system": "metadv",
+  "ownership": {
+      "PLAYER": "LIMITED",
+      "ASSISTANT": "OWNER"
+  },
+  "flags": {}
+}
+],
+"packFolders":[
+  {
+  "name": "ACTEURS",
+  "sorting": "a",
+  "color": "#b24301",
+  "packs": ["metadv-pnj","metadv-vaisseaux"],
+  "folders": []
+},
+{
+  "name": "OBJETS",
+  "sorting": "a",
+  "color": "#6c5b6d",
+  "packs": ["metadv-objets","metadv-armes","metadv-armures","metadv-accessoires"],
+  "folders": []
+},
+{
+  "name": "CARACTERISTIQUE HEROS",
+  "sorting": "a",
+  "color": "#6a7947",
+  "packs": ["metadv-motivations","metadv-origines","metadv-archetypes","metadv-aptitudes","metadv-traits","metadv-mutations"],
+  "folders": []
+}
+],
+
+"languages": [
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json",
+      "flags": {}
+    }
+  ],
+  "initiative": "2d6",
+  "gridDistance": 1.5,
+  "gridUnits": "m",
+  "background": "systems/metadv/assets/background-metal-adventures.webp",
+  "url": "https://landreau.phpnet.org/fvtt/metadv/LICENCE.txt",
+  "manifest": "https://landreau.phpnet.org/fvtt/metadv/system.json",
+  "download": "https://landreau.phpnet.org/fvtt/metadvzip/metadv.zip",
+  "license": "LICENSE.txt"
+}

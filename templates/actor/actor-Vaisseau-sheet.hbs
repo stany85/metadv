@@ -1,0 +1,278 @@
+<form class="{{cssClass}}{{actor.type}}" autocomplete="off">
+    <script src="https://use.fontawesome.com/1ecf590610.js"></script>
+        {{!-- Sheet Header --}}
+        <header class="sheet-header">
+            <img src="{{actor.img}}" class="ImgVaisseau" data-edit="img" title="{{actor.name}}" height="100" width="200"/>
+            <div class="header-fields">
+                <div class="coolinput"><input name="name" class="input" type="text" value="{{actor.name}}" placeholder="Name"/></div>
+            </div>
+        </header>
+                    {{!-- Sheet Tab Navigation --}}
+        <nav class="sheet-tabs tabs" data-group="primary">
+            <a class="item" data-tab="description">Description</a>
+            <a class="item" data-tab="items">Soute</a> 
+            <a class="item" data-tab="combat">Combat</a>
+            <a class="item" data-tab="equipage">Equipage</a>  
+            <a class="item" data-tab="notes">Notes</a>           
+        </nav>  
+        <!-- Description-->
+        <section class="sheet-body">
+        <div class="tab biography" data-group="primary" data-tab="description">
+            <div>
+                <div id="DivGaucheVaisseau">
+                <table class="attribut">
+                    <tr><td>Classe</td><td><input type="text" value="{{actor.system.Classe}}" name="system.Classe"></td><td>Autonomie</td><td><input type="text" value="{{actor.system.Autonomie}}" name="system.Autonomie"></td></tr>
+                    <tr><td>Modèle</td><td><input type="text" value="{{actor.system.Modele}}" name="system.Modele"></td><td>Blindage</td><td><input type="text" value="{{actor.system.Blindage}}" name="system.Blindage"></tr>
+                    <tr><td>Longueur</td><td><input type="text" value="{{actor.system.Longueur}}" name="system.Longueur"></td><td>Coque</td><td><input type="text" value="{{actor.system.Coque}}" name="system.Coque"></tr>
+                    <tr><td>Capacité soute</td><td><input type="text" value="{{actor.system.Soute}}" name="system.Soute"></td><td>Senseurs</td><td><input type="text" value="{{actor.system.Senseurs}}" name="system.Senseurs"></tr>
+                    <tr><td>Manoeuvrabilité</td><td><input type="text" value="{{actor.system.Manoeuvrabilite}}" name="system.Manoeuvrabilite"></td><td>Origine</td><td><input type="text" value="{{actor.system.Origine}}" name="system.Origine"></tr>
+                    <tr><td>Vitesse Tactique</td><td><input type="text" value="{{actor.system.Vitesse.Tactique}}" name="system.Vitesse.Tactique"></td><td>Prix</td><td><input type="text" value="{{actor.system.Prix}}" name="system.Prix"></tr>
+                    <tr><td>Vitesse Croisiere</td><td><input type="text" value="{{actor.system.Vitesse.Croisiere}}" name="system.Vitesse.Croisiere"></td><td>Equipage</td><td><input type="text" value="{{actor.system.Vitesse.Equipage}}" name="system.Vitesse.Equipage"></tr>
+                    <tr><td>Vitesse Hyperspatiale</td><td><input type="text" value="{{actor.system.Vitesse.Hyperspatiale}}" name="system.Vitesse.Hyperspatiale"></td><td>Passagers</td><td><input type="text" value="{{actor.system.Passagers}}" name="system.Passagers"></tr>
+                </table>
+                    
+                </div>
+
+            </div>
+            <div>
+            <div class="containerheader"><H8>Description du vaisseau</H8></div>
+           
+            {{editor Description target="system.Description" button=true editable=editable}}
+            </div>
+
+
+        </div>
+
+
+
+        <!--Détails -->
+<div class="tab items" data-group="primary" data-tab="items">
+    <div id="DivDommageVaisseau">
+        <ol class="items-list">
+  <li class="item flexrow items-header"></li>
+ <div class="container23">
+  <H8>Radix</H8>
+  <div id="DivDommageVaisseau">
+        <table class="attribut">
+        <tr><td width="60">RADIX 500</td><td>{{#Radix500 actor.system.Radix500 18}}{{/Radix500}}</td></tr>
+        <tr><td>RADIX 100</td><td>{{#Radix100 actor.system.Radix100 18}}{{/Radix100}}</td></tr>
+        </table>
+    </div> 
+ </div>  
+<div class="container23">
+  <div class="containerheader"><H8>Soute</H8> <a class="item-control item-create" title="Create item" data-type="Objet"><i class="fas fa-plus"></i> Ajouter cargaison</a></div> 
+  <div class="listeObjetNomTitre">&nbsp;</div>
+  <div class="listeArmePorteeTitre">Quantite</div>  
+  <div class="listeArmePorteeTitre">Prix</div>
+  <div class="listeArmePorteeTitre">Encombrement</div>
+  <div class="saut"></div>     
+   {{#each objets as |item id|}}
+   <div class="item" data-item-id="{{item._id}}">
+   <div class="listeArmeImg"><img src="{{item.img}}" title="{{item.name}}" class="etiquetteimg" width="32" height="32"/></div>            
+   <div class="listeObjetNom"><a class="item-edit">{{item.name}}</a></div>
+   <div class="listeArmePortee"><a class="quantity-modify plus-minus-button" data-quantite-value="-1"><i class="fa fa-minus-square-o" aria-hidden="true"></i></a>
+    <b>{{item.system.Quantite}}</b><a class="quantity-modify plus-minus-button" data-quantite-value="-1"></a>
+    <a class="quantity-modify plus-minus-button" data-quantite-value="+1"><i class="fa fa-plus-square-o" aria-hidden="true"></i></a></div>
+   <div class="listeArmePortee">{{item.system.Prix}}</div>
+   <div class="listeArmePortee">{{#Encombrement item.system.Quantite item.system.Encombrement}}{{/Encombrement}}</div> 
+   <div class="listeArmeSuppr"><a class="item-delete" title="Suppression"> <i class="fas fa-trash"></i></a></div>           
+   </div>
+
+   <div class="saut"></div>
+  
+   {{/each}}
+   <div class="{{#AlerteEncombrement EncombrementTotal actor.system.Soute}}{{/AlerteEncombrement}}">Capacite de stockage :  {{EncombrementTotal}} / {{actor.system.Soute}}</div> 
+</div>
+
+<div class="container23">
+  <div class="containerheader"><H8>Accessoire du vaisseau</H8></div> 
+  <div class="listeObjetNomTitre">&nbsp;</div> 
+  <div class="listeArmePorteeTitre">Prix</div>
+  
+  <div class="saut"></div>     
+   {{#each accessoires as |item id|}}
+   <div class="item" data-item-id="{{item._id}}">
+   <div class="listeArmeImg"><img src="{{item.img}}" title="{{item.name}}" class="etiquetteimg" width="32" height="32"/></div>            
+   <div class="listeObjetNom"><a class="item-edit">{{item.name}}</a></div>
+   <div class="listeArmePortee">{{item.system.Prix}}</div>
+   <div class="listeArmeSuppr"><a class="item-delete" title="Suppression"> <i class="fas fa-trash"></i></a></div>           
+   </div>
+
+   <div class="saut"></div>
+  
+   {{/each}}
+</div>
+</ol>
+</div>
+
+</div>
+
+
+<div class="tab biography" data-group="primary" data-tab="combat">
+    <div id="DivDommageVaisseau">
+        <table class="attribut">
+        <tr><td width="120">Intact</td><td>{{#VieIndemne actor.system.Coque actor.system.Indemne}}{{/VieIndemne}} </td></tr>
+        <tr><td>Légèrement endommangé</td><td>{{#VieLeger actor.system.Coque actor.system.Leger}}{{/VieLeger}}</td></tr>
+        <tr><td>Gravement endommangé</td><td>{{#VieGrave actor.system.Coque actor.system.Grave}}{{/VieGrave}}</td></tr>
+        <tr><td>Détruit?  </td><td>{{#VieMort actor.system.Coque actor.system.Mort}}{{/VieMort}}</td></tr>
+        </table>
+    </div>  
+    <div class="container23">
+     <div class="containerheader"><H8>Armement du vaisseau</H8></div>
+        <div class="listeArmeNomTitre">&nbsp;</div>
+        <div class="listeArmeArcTitre">Arc Tir</div> 
+        <div class="listeArmeDegatsTitre">Dégats</div> 
+        <div class="listeArmePorteeTitre">Portée</div>     
+        <div class="listeArmeModeTitre">Mode de tir</div> 
+        <div class="listeArmeModeTitre">Equipage</div> 
+        <div class="saut"></div>
+        {{#each armes as |item id|}}
+        <div class="item" data-item-id="{{item._id}}">
+        <div class="listeArmeImg"><img src="{{item.img}}" title="{{item.name}}" class="etiquetteimg" width="32" height="32"/></div>             
+        <div class="listeArmeNom"><a class="item-control item-edit">{{item.name}}</a></div>
+        <div class="listeArmeArc">{{item.system.ArcTir}}</div>
+        <div class="listeArmeDegats">{{item.system.Degats}}</div>
+        <div class="listeArmePortee">{{item.system.Portee}}</div>
+        <div class="listeArmeMode">{{item.system.Mode}}</div>
+        <div class="listeArmeMode"><input type="text" value="{{item.system.Vaisseau.EquipageActuel}}/{{item.system.Vaisseau.EquipageRequis}}" class="{{#VerifEquipage item.system.Vaisseau.EquipageRequis item.system.Vaisseau.EquipageActuel}}{{/VerifEquipage}}"></div>
+     <!-- En dévelopement <div class="useweapon"><a>Utiliser</a></div> -->
+        <div class="listeArmeSuppr"><a class="item-control item-delete" title="Suppression"> <i class="fas fa-trash"></i></a></div>           
+      </div>
+     <div class="saut"></div>
+    {{#Munition item.system.MunitionMax item.system.Munition}}{{/Munition}}
+     {{/each}}
+    
+</div> 
+</div>
+{{!-- Onglet Equipage--}}
+<div class="tab biography" data-group="primary" data-tab="equipage">
+<div class="container23">
+  <div class="containerheader"><H8>Capitaine</H8></div> 
+  <div class="saut"></div>   
+            {{#each capitaine as |membre key|}}
+            <div class="item membre" data-actor-id="{{membre.id}}" >
+              <div class="membre-img"><img src="{{membre.img}}"/></div>
+              <div class="membre-nom">{{membre.name}}</div>  
+              <div class="item-filler">&nbsp;</div>
+              <div class="item-controls item-controls-fixed membre-action">
+                <a class="item-control actor-edit" title="Editer membre"><i class="fas fa-edit"></i></a>
+                <a class="item-control actor-delete" title="Renvoyer membre"><i class="fas fa-trash"></i></a>
+              </div>
+            </div>
+            <div class="saut"></div>
+            {{/each}}
+            
+    </div>
+
+<div class="container23">
+  <div class="containerheader"><H8>Officiers</H8></div> 
+  <div class="saut"></div>   
+            {{#each officier as |membre key|}}
+            <div class="item membre" data-actor-id="{{membre.id}}" >
+              <div class="membre-img"><img src="{{membre.img}}"/></div>
+              <div class="membre-nom">{{membre.name}}</div>  
+              <div class="item-filler">&nbsp;</div>
+              <div class="item-controls item-controls-fixed membre-action">
+                <a class="item-control actor-edit" title="Editer membre"><i class="fas fa-edit"></i></a>
+                <a class="item-control actor-delete" title="Renvoyer membre"><i class="fas fa-trash"></i></a>
+              </div>
+            </div>
+            <div class="saut"></div>
+            {{/each}}
+            
+    </div>
+
+<div class="container23">
+  <div class="containerheader"><H8>Pilotes</H8></div> 
+  <div class="saut"></div>   
+            {{#each pilote as |membre key|}}
+            <div class="item membre" data-actor-id="{{membre.id}}" >
+              <div class="membre-img"><img src="{{membre.img}}"/></div>
+              <div class="membre-nom">{{membre.name}}</div>  
+              <div class="item-filler">&nbsp;</div>
+              <div class="item-controls item-controls-fixed membre-action">
+                <a class="item-control actor-edit" title="Editer membre"><i class="fas fa-edit"></i></a>
+                <a class="item-control actor-delete" title="Renvoyer membre"><i class="fas fa-trash"></i></a>
+              </div>
+            </div>
+            <div class="saut"></div>
+            {{/each}}
+            
+    </div>
+
+<div class="container23">
+  <div class="containerheader"><H8>Bosco</H8></div> 
+  <div class="saut"></div>   
+            {{#each bosco as |membre key|}}
+            <div class="item membre" data-actor-id="{{membre.id}}" >
+              <div class="membre-img"><img src="{{membre.img}}"/></div>
+              <div class="membre-nom">{{membre.name}}</div>  
+              <div class="item-filler">&nbsp;</div>
+              <div class="item-controls item-controls-fixed membre-action">
+                <a class="item-control actor-edit" title="Editer membre"><i class="fas fa-edit"></i></a>
+                <a class="item-control actor-delete" title="Renvoyer membre"><i class="fas fa-trash"></i></a>
+              </div>
+            </div>
+            <div class="saut"></div>
+            {{/each}}
+            
+    </div>
+<div class="container23">
+  <div class="containerheader"><H8>Vigies</H8></div> 
+  <div class="saut"></div>   
+            {{#each vigie as |membre key|}}
+            <div class="item membre" data-actor-id="{{membre.id}}" >
+              <div class="membre-img"><img src="{{membre.img}}"/></div>
+              <div class="membre-nom">{{membre.name}}</div>  
+              <div class="item-filler">&nbsp;</div>
+              <div class="item-controls item-controls-fixed membre-action">
+                <a class="item-control actor-edit" title="Editer membre"><i class="fas fa-edit"></i></a>
+                <a class="item-control actor-delete" title="Renvoyer membre"><i class="fas fa-trash"></i></a>
+              </div>
+            </div>
+            <div class="saut"></div>
+            {{/each}}
+            
+    </div>
+<div class="container23">
+  <div class="containerheader"><H8>Machinerie</H8></div> 
+  <div class="saut"></div>   
+            {{#each machinerie as |membre key|}}
+            <div class="item membre" data-actor-id="{{membre.id}}" >
+              <div class="membre-img"><img src="{{membre.img}}"/></div>
+              <div class="membre-nom">{{membre.name}}</div>  
+              <div class="item-filler">&nbsp;</div>
+              <div class="item-controls item-controls-fixed membre-action">
+                <a class="item-control actor-edit" title="Editer membre"><i class="fas fa-edit"></i></a>
+                <a class="item-control actor-delete" title="Renvoyer membre"><i class="fas fa-trash"></i></a>
+              </div>
+            </div>
+            <div class="saut"></div>
+            {{/each}}
+            
+    </div>
+<div class="container23">
+  <div class="containerheader"><H8>Sans affectation</H8></div> 
+  <div class="saut"></div>   
+            {{#each autremembre as |membre key|}}
+            <div class="item membre" data-actor-id="{{membre.id}}" >
+              <div class="membre-img"><img src="{{membre.img}}"/></div>
+              <div class="membre-nom">{{membre.name}}</div>  
+              <div class="item-filler">&nbsp;</div>
+              <div class="item-controls item-controls-fixed membre-action">
+                <a class="item-control actor-edit" title="Editer membre"><i class="fas fa-edit"></i></a>
+                <a class="item-control actor-delete" title="Renvoyer membre"><i class="fas fa-trash"></i></a>
+              </div>
+            </div>
+            <div class="saut"></div>
+            {{/each}}
+            
+    </div>
+</div>
+{{!-- Onglet notes --}}
+<div class="tab biography" data-group="primary" data-tab="notes">
+{{editor Notes target="system.Notes" button=true editable=editable}}
+</div>
+</section>
+</form>
+

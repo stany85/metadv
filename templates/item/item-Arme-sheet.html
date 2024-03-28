@@ -1,0 +1,36 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+    </header>
+    <hr />
+    <table class="attribut">
+        <tr><td><b>Compétence utilisée :</b></td><td>
+            <select name="system.AttributAssocie">
+                <option value="Technique.Competence.ArmesPoing.total" {{#CheckAttAssPoing item.system.AttributAssocie}}{{/CheckAttAssPoing}}>Arme de poing</option>
+                <option value="Technique.Competence.ArmesEpaule.total" {{#CheckAttAssEpaule  item.system.AttributAssocie}}{{/CheckAttAssEpaule}}>Arme d"épaule</option>
+                <option value="Technique.Competence.ArmesTrait.total" {{#CheckAttAssTrait item.system.AttributAssocie}}{{/CheckAttAssTrait}}>Arme de trait</option>
+                <option value="Technique.Competence.ArmesEmb.total" {{#CheckAttAssEmb item.system.AttributAssocie}}{{/CheckAttAssEmb}}>Arme embarquée</option>
+                <option value="Survie.Competence.ArmesJet.total" {{#CheckAttAssJet item.system.AttributAssocie}}{{/CheckAttAssJet}}>Arme de jet</option>
+                <option value="Survie.Competence.ArmesLourdes.total" {{#CheckAttAssLourdes item.system.AttributAssocie}}{{/CheckAttAssLourdes }}>Arme lourde</option>
+                <option value="Survie.Competence.Melee.total" {{#CheckAttAssMelee item.system.AttributAssocie}}{{/CheckAttAssMelee}}>Mélée</option>
+            </select></td></tr> 
+        <tr><td><b>Disponibilité  :</b></td><td><input class="inputma" name="system.Disponibilite" type="text" value="{{item.system.Disponibilite}}" size="10" /></td></tr> 
+        <tr><td><b>Type :</b></td><td>
+            <select name="system.Type">
+                <option value="individuel" {{#CheckTypeInd item.system.Type}}{{/CheckTypeInd}}>Individuel</option>
+                <option value="vaisseau" {{#CheckTypeVai item.system.Type}}{{/CheckTypeVai}}>Vaisseau</option>
+            </select></td></tr> 
+        {{#AfficheArcTir item.system.Type item.system.ArcTir}}{{/AfficheArcTir}} 
+        {{#AfficheRequis item.system.Type item.system.Vaisseau.EquipageRequis}}{{/AfficheRequis}}  
+        {{#AfficheActuel item.system.Type item.system.Vaisseau.EquipageActuel}}{{/AfficheActuel}}  
+        {{#AfficheOccupation item.system.Type item.system.Occupation}}{{/AfficheOccupation}}      
+        <tr><td><b>Dégats :</b></td><td><input class="inputma" name="system.Degats" type="text" value="{{item.system.Degats}}" size="10" /></td></tr>       
+        <tr><td><b>Mode de tir :</b></td><td><input class="inputma" name="system.Mode" type="text" value="{{item.system.Mode}}" size="10" /></td></tr>
+        <tr><td><b>Portée :</b></td><td><input class="inputma" name="system.Portee" type="text" value="{{item.system.Portee}}" size="10" /></td></tr>
+        <tr><td><b>Prix :</b></td><td><input class="inputma" name="system.Prix" type="text" value="{{item.system.Prix}}" size="10" /> </td></tr>
+        <tr><td><b>Capacité mun. :</b></td><td><input class="inputma" name="system.MunitionMax" type="text" value="{{item.system.MunitionMax}}" size="10" /> </td></tr>
+        <tr><td colspan="2"><textarea name="system.Description" cols="30" rows="8">{{item.system.Description}}</textarea></td></tr>
+
+    </table>
+</form>

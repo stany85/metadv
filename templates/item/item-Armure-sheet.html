@@ -1,0 +1,15 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+    </header>
+    <hr />
+    <table class="attribut">
+        <tr><td><b>Disponibilité :</b></td><td><input class="inputma" name="system.Disponibilite" type="text" value="{{item.system.Disponibilite}}" size="10" /></td></tr>   
+        <tr><td><b>Protection :</b></td><td><input class="inputma" name="system.Protection" type="text" value="{{item.system.Protection}}" size="10" /></td></tr>       
+        <tr><td><b>Encombrement :</b></td><td><input class="inputma" name="system.Encombrement" type="text" value="{{item.system.Encombrement}}" size="10" /></td></tr>
+        <tr><td><b>Propriété :</b></td><td><textarea name="system.Propriete" cols="30" rows="4">{{item.system.Propriete}}</textarea></td></tr>
+        <tr><td><b>Prix :</b></td><td><input class="inputma" name="system.Cout" type="text" value="{{item.system.Cout}}" size="10" /></td></tr>
+        <tr><td colspan="2"><textarea name="system.Description" cols="30" rows="8">{{item.system.Description}}</textarea></td></td></tr>
+    </table>
+</form>

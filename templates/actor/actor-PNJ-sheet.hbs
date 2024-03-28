@@ -1,0 +1,258 @@
+<form class="{{cssClass}} {{actor.type}}" autocomplete="off">
+<script src="https://use.fontawesome.com/1ecf590610.js"></script>
+  {{!-- Entete--}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+    <div class="header-fields">
+      <div class="coolinput"><input name="name" class="input" type="text" value="{{actor.name}}" placeholder="Nom"/></div>
+    
+    <div class="saut"></div> 
+    
+    <div class="modificateurs">
+     
+      {{#JetDeTF actor.system.JetDe}}{{/JetDeTF}}
+      {{#JetDeN actor.system.JetDe}}{{/JetDeN}}
+      {{#JetDeTD actor.system.JetDe}}{{/JetDeTD}}
+     
+      <div class="bonus">Dés Bonus : 
+      <a class="moinsBonus" title="Suppression"><i class="fas fa-minus"></i></a>
+      <span title="Dés Bonus" class="DesBonusclaire">{{actor.system.DesBonus}}</span>
+      <a class="plusBonus" title="Ajout"><i class="fas fa-plus"></i></a>
+      </div>
+
+      <div class="bonus">Metal Factor :
+      <a class="moinsMF" title="Suppression"><i class="fas fa-minus"></i></a>
+      <span title="Dés Metal Factor" class="DesMf">{{actor.system.JetMf}}</span>
+      <a class="plusMF" title="Ajout"><i class="fas fa-plus"></i></a>
+      </div>
+      <div class="saut"></div> 
+    </div>
+    <div class="modificateurs">
+    {{#TypeJetN actor.system.TypeJet}}{{/TypeJetN}}
+    {{#TypeJetPMF actor.system.TypeJet}}{{/TypeJetPMF}}
+    {{#TypeJetSc actor.system.TypeJet}}{{/TypeJetSc}}
+    {{#TypeJetE2f actor.system.TypeJet}}{{/TypeJetE2f}}
+    </div>
+      </div>
+  </header>
+
+  {{!-- Menu onglets --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    {{!-- Default tab is specified in actor-sheet.mjs --}}
+    <a class="item" data-tab="general">Général</a>
+    <a class="item" data-tab="competences">Compétences</a>
+    <a class="item" data-tab="items">Equipement</a>
+    <a class="item" data-tab="details">Détails</a>
+    <a class="item" data-tab="bio">Bio</a>
+   {{!--  <a class="item" data-tab="effects">Effects</a>--}}
+  </nav>
+
+  {{!-- Feuille principale--}}
+  <section class="sheet-body">
+
+    {{!-- Onglet général --}}
+    <div id="bloc1" class="tab biography"  data-group="primary" data-tab="general">
+      <div class="divgauche">
+        
+          <table class="attributPrimaire">
+            <tr><td>Attribut</td><td width="40">Base</td><td width="40">Bonus</td></tr>
+            <tr><td>Agilité</td><td><input class="attbase" type="number" size="1" name="system.Attribut.Agilite" value="{{actor.system.Attribut.Agilite}}"></td><td><input class="attbonus" type="number" size="1" name="system.Bonus.Agilite" value="{{actor.system.Bonus.Agilite}}"></td></tr>
+            <tr><td>Carrure</td><td><input  class="attbase" type="number" size="1" name="system.Attribut.Carrure" value="{{actor.system.Attribut.Carrure}}"></td><td><input class="attbonus"type="number" size="1" name="system.Bonus.Carrure" value="{{actor.system.Bonus.Carrure}}"></td></tr>
+            <tr><td>Perception</td><td><input class="attbase"  type="number" size="1" name="system.Attribut.Perception" value="{{actor.system.Attribut.Perception}}"></td><td><input class="attbonus" type="number" size="1" name="system.Bonus.Perception" value="{{actor.system.Bonus.Perception}}"></td></tr>
+            <tr><td>Intelligence</td><td><input class="attbase"  type="number" size="1" name="system.Attribut.Intelligence" value="{{actor.system.Attribut.Intelligence}}"></td><td><input class="attbonus" type="number" size="1" name="system.Bonus.Intelligence" value="{{actor.system.Bonus.Intelligence}}"></td></tr>
+            <tr><td>Presence</td><td><input class="attbase"  type="number" size="1" name="system.Attribut.Presence" value="{{actor.system.Attribut.Presence}}"></td><td><input class="attbonus" type="number" size="1" name="system.Bonus.Presence" value="{{actor.system.Bonus.Presence}}"></td></tr>
+            <tr><td>Sang-froid</td><td><input class="attbase"  type="number" size="1" name="system.Attribut.SangFroid" value="{{actor.system.Attribut.SangFroid}}"></td><td><input class="attbonus" type="number" size="1" name="system.Bonus.SangFroid" value="{{actor.system.Bonus.SangFroid}}"></td></tr>
+          </table>
+      </div>
+
+      <div  class="divdroite">
+        <table class="attribut">
+                        <tr><td width="90">Indemne :</td><td>
+                            {{#VieIndemne actor.system.CapitalVie actor.system.Indemne}}{{/VieIndemne}}                            
+                            </td></tr>
+                        <tr><td>Blessé léger :</td><td>
+                            {{#VieLeger actor.system.CapitalVie actor.system.Leger}}{{/VieLeger}} 
+                        </td></tr>
+                        <tr><td>Blessé grave :</td><td>
+                            {{#VieGrave actor.system.CapitalVie actor.system.Grave}}{{/VieGrave}} 
+                        </td></tr>
+                        <tr><td>Mort? :</td><td>
+                            {{#VieMort actor.system.CapitalVie actor.system.Mort}}{{/VieMort}} 
+                        </td></tr>
+                       <tr>
+                        <td width="90">Energie X :</td>
+                        <td>{{#Mut actor.system.EnergieX actor.system.EnergieX actor.system.Mutant}}{{/Mut}}</td></tr>
+                        <tr><td width="90">Panache :</td>
+                        <td>{{#Pana actor.system.Details.Panache actor.system.Pan}}{{/Pana}}</td></tr>
+                    </tr>
+                   </table> 
+    
+        <table class="attribut">
+                        <tr><td><input type="button" class="JetInitMelee" name="system.InitCombatPerso" value="{{actor.system.InitCombatPerso}}" readonly></td><td width="160">Initiative mélée</td>
+                        <td><input type="button" class="JetInitSpatial" name="system.InitSpatial" value="{{actor.system.InitSpatial}}" readonly></td><td>Initiative spatiale</td></tr>
+                        <tr><td><input type="button" class="JetInitSocial" name="system.InitSocial" value="{{actor.system.InitSocial}}" readonly></td><td width="160">Initiative sociale</td>
+                        <td><input type="button" class="JetInitAutre" name="system.InitAutre" value="{{actor.system.InitAutre}}" readonly></td><td>Initiative autre</td></tr>
+        </table> 
+
+        
+          </div>
+          <div class="saut">
+        </div> 
+       <div class="caracthero">
+      <!-- Bloc Points de vie -->
+            <div class="container23">
+           <div class="containerheader"><H8>Archétype</H8></div> 
+            {{#each archetypes as |item id|}}
+            <div class="item" data-item-id="{{item._id}}">
+            <div class="imgcontainer23"><img src="{{item.img}}" title="{{item.name}}" class="etiquetteimg" width="32" height="32"/></div>             
+            <div class="textecontainer23"><a class="item-control item-edit"><div class="nomatt">{{item.name}}</div><div class="delete"><a class="item-control item-delete" title="Suppression"> <i class="fas fa-trash"></i></a></div></div>           
+            </div>
+            <div class="saut"></div>
+            {{/each}}
+        </div>
+            <div class="container23">
+           <div class="containerheader"><H8>Aptitudes</H8></div> 
+            {{#each aptitudes as |item id|}}
+            <div class="item" data-item-id="{{item._id}}">
+            <div class="imgcontainer23"><img src="{{item.img}}" title="{{item.name}}" class="etiquetteimg" width="32" height="32"/></div>             
+            <div class="textecontainer23"><a class="item-control item-edit"><div class="nomatt">{{item.name}}</div><div class="delete"><a class="item-control item-delete" title="Suppression"> <i class="fas fa-trash"></i></a></div></div>           
+            </div>
+            <div class="saut"></div>
+            {{/each}}
+        </div>
+        <div class="container23">
+            <div class="containerheader"><H8>Origine</H8></div>
+             {{#each origines as |item id|}}
+            <div class="item" data-item-id="{{item._id}}">
+            <div class="imgcontainer23"><img src="{{item.img}}" title="{{item.name}}" class="etiquetteimg" width="32" height="32"/></div>             
+            <div class="textecontainer23"><a class="item-control item-edit"><div class="nomatt">{{item.name}}</div><div class="delete"><a class="item-control item-delete" title="Suppression"> <i class="fas fa-trash"></i></a></div></div>           
+            </div>
+            <div class="saut"></div>
+            {{/each}} 
+        </div>
+        <div class="container23">
+            <div class="containerheader"><H8>Motivation</H8></div>
+             {{#each motivations as |item id|}}
+            <div class="item" data-item-id="{{item._id}}">
+            <div class="imgcontainer23"><img src="{{item.img}}" title="{{item.name}}" class="etiquetteimg" width="32" height="32"/></div>             
+            <div class="textecontainer23"><a class="item-control item-edit"><div class="nomatt">{{item.name}}</div><div class="delete"><a class="item-control item-delete" title="Suppression"> <i class="fas fa-trash"></i></a></div></div>           
+            </div>
+            <div class="saut"></div>
+            {{/each}}
+        </div>
+        <div class="container23">
+            <div class="containerheader"><H8>Traits</H8></div>
+             {{#each traits as |item id|}}
+            <div class="item" data-item-id="{{item._id}}">
+            <div class="imgcontainer23"><img src="{{item.img}}" title="{{item.name}}" class="etiquetteimg" width="32" height="32"/></div>             
+            <div class="textecontainer23"><a class="item-control item-edit"><div class="nomatt">{{item.name}}</div><div class="delete"><a class="item-control item-delete" title="Suppression"> <i class="fas fa-trash"></i></a></div></div>           
+            </div>
+            <div class="saut"></div>
+            {{/each}}
+        </div>
+      {{#if actor.system.Mutant}}
+        <div class="container23">
+            <div class="containerheader"><H8>Mutations</H8></div>
+             {{#each mutations as |item id|}}
+            <div class="item" data-item-id="{{item._id}}">
+            <div class="imgcontainer23"><img src="{{item.img}}" title="{{item.name}}" class="etiquetteimg" width="32" height="32"/></div>             
+            <div class="textecontainer23"><a class="item-control item-edit"><div class="nomatt">{{item.name}}</div><div class="delete"><a class="item-control item-delete" title="Suppression"> <i class="fas fa-trash"></i></a></div></div>           
+            </div>
+            <div class="saut"></div>
+            {{/each}} 
+        </div>
+      {{/if}}
+          <div class="saut"></div>          
+                </div>  
+    </div>
+ 
+
+    {{!-- Onglet compétences--}}
+    <div class="tab biography" data-group="primary" data-tab="competences">
+
+      <!-- On liste les compétences par domaine (boucle) -->
+      {{#each actor.system.Domaine as |dom domNom|}}      
+      <div id="domaine">
+          <div id="nomDomaine"><input type="checkbox" name="system.Domaine.{{domNom}}.Valeur" id="Checkbox" data-dtype="Boolean" {{checked dom.Valeur}} > {{dom.Intitule}} </div>               
+      <table id="Tabcompetence">
+          {{#each dom.Competence as |comp CompNom|}}
+          <tr  id="trComp">
+          <!-- Certaines compétences sont éditables il faut donc proposer un input éditable au lieu du texte-->
+          {{#if Editable}}
+              {{#if Mf}}
+              <td  class="tdComp"><input id="InputIntituleCompMf" class="CompetenceMf" type="text" name="system.Domaine.{{domNom}}.Competence.{{CompNom}}.Intitule" value="{{comp.Intitule}}" placeholder="{{Comp.Intitule}}"></td>
+              {{else}}
+              <td  class="tdComp"><input id="InputIntituleComp" type="text" name="system.Domaine.{{domNom}}.Competence.{{CompNom}}.Intitule" value="{{comp.Intitule}}" placeholder="{{Comp.Intitule}}"></td>
+              {{/if}}
+          {{else}}
+              {{#if Mf}}
+              <td class="CompetenceMf">{{comp.Intitule}}</td>
+              {{else}}
+              <td>{{comp.Intitule}}</td>
+              {{/if}}
+          {{/if}}
+          <!-- Champ de la valeur de la compétence -->
+          <td width="10"><input id="InputCom" height="5" type="number" name="system.Domaine.{{domNom}}.Competence.{{CompNom}}.Valeur" value="{{comp.Valeur}}" placeholder="{{CompNom}}"></td>
+          <!-- Champ du total de la compétence et Listener pour lancer de dé -->
+          <td id="tdTotalComp"  data-dice="{{comp.total}}" data-typejet="{{data.TypeJet}}" data-dicecomp="{{comp.Intitule}}" class="JetCompetence">{{comp.total}}</td>
+          </tr>
+          {{/each}}
+      </table>
+      </div>
+      
+      {{/each}}
+      
+    </div>
+
+    {{!-- Onglets Equipement--}}
+    <div class="tab biography" data-group="primary" data-tab="items">
+       {{> "systems/metadv/templates/actor/parts/actor-items.html"}}
+    </div>
+
+    {{!-- Onglets détais--}}
+    <div class="tab spells" data-group="primary" data-tab="details">
+      <div class="contenu">
+        <div class="gauche">
+      <table class="attribut">
+        <tr><th colspan="2">Caractéristiques</th></tr>
+        <tr class="trPetit"><td class="tdComp">Crédits</td><td width="80"><input id="InputAttribut" type="text" name="system.Credits" size="6" value="{{actor.system.Credits}}" placeholder="0"></td></tr> 
+        {{#each system.Details as |car CarNom|}} 
+        <tr class="trPetit"><td class="tdComp">{{CarNom}}</td><td width="80"><input id="InputAttribut" type="text"  name="system.Details.{{CarNom}}" value="{{car}}" placeholder="{{CarNom}}"></td></tr>                    
+        {{/each}}
+        <tr class="trPetit"><td class="tdComp">Mutant</td><td width="80"><input id="InputAttribut" type="checkbox" name="system.Mutant" {{checked system.Mutant}} placeholder="Mutant"></td></tr>
+        <tr class="trPetit"><td class="tdComp">Role dans un vaisseau</td>        
+        <td>
+          <select name="system.VaisseauRole">
+            <option value="-" {{#CheckVide actor.system.VaisseauRole}}{{/CheckVide}}>-</option>
+                <option value="Capitaine" {{#CheckCapitaine actor.system.VaisseauRole}}{{/CheckCapitaine}}>Capitaine</option>
+                <option value="Officier" {{#CheckOfficier actor.system.VaisseauRole}}{{/CheckOfficier}}>Officier</option>
+                <option value="Pilote" {{#CheckPilote actor.system.VaisseauRole}}{{/CheckPilote}}>Pilote</option>
+                <option value="Machinerie" {{#CheckMachinerie actor.system.VaisseauRole}}{{/CheckMachinerie}}>Machinerie</option>
+                <option value="Vigie" {{#CheckVigie actor.system.VaisseauRole}}{{/CheckVigie}}>Vigie</option>
+                <option value="Bosco" {{#CheckBosco actor.system.VaisseauRole}}{{/CheckBosco}}>Bosco</option>
+            </select></td></tr> 
+      </table> 
+      </div>
+      <div class="droite">
+      <table class="attribut">
+        <tr><th colspan="2">Description</th></tr>
+        {{#each system.Description as |des desNom|}} 
+        <tr class="trPetit"><td class="tdComp">{{desNom}}</td><td width="80"><input id="InputAttribut" type="text" name="system.Description.{{desNom}}" value="{{des}}" placeholder="{{desNom}}"></td></tr>                    
+         {{/each}} 
+      </table>
+      </div>
+      <div class="both"></div></div>
+    </div>
+
+    {{!-- Onglets effets --}}
+    <div class="tab effects flexcol" data-group="primary" data-tab="effects">
+      {{> "systems/metadv/templates/actor/parts/actor-effects.html"}}
+    </div>
+
+{{!-- Onglet biographie--}}
+<div class="tab biography" data-group="primary" data-tab="bio">
+{{editor Historique target="system.Historique" button=true editable=editable}}
+</div>
+  </section>
+</form>
+

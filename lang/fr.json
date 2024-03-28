@@ -1,0 +1,15 @@
+{
+ 
+
+  "METADV.EffectCreate": "Ajouter un effet",
+  "METADV.EffectToggle": "Changer l'effet",
+  "METADV.EffectEdit": "Editer l'effet",
+  "METADV.EffectDelete": "Supprimer l'effet",
+
+  "METADV.Add": "Ajouter",
+
+  "RPGUI.SETTINGS.EnableTitle": "Boutons de jet : Remplacer le sélecteur de type de jet par des boutons",
+  "RPGUI.SETTINGS.EnableHint": "Remplacer le menu déroulant de sélection de type de jet par un ensemble de quatre boutons.",
+  "RPGUI.SETTINGS.ReplaceButtonsTitle": "Boutons de jet : Utiliser le style de bouton sur tous les boutons de chat",
+  "RPGUI.SETTINGS.ReplaceButtonsHint": "Restylez les autres boutons de chat pour qu'ils aient la même apparence que les nouveaux boutons de jet."
+}

@@ -1,0 +1,14 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" class="imgHero" data-edit="img" title="{{item.name}}" height="128" width="128"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+    </header>
+    <hr />
+    <table class="attribut">
+        <tr><td colspan="2"><textarea name="system.Description" cols="30" rows="4">{{item.system.Description}}</textarea></td></tr>
+        <tr><td>Bonus compétence :</td><td><textarea name="system.BonusCompetence" cols="30" rows="2">{{item.system.BonusCompetence}}</textarea></td></tr>
+        <tr><td>Overdrive :</td><td><textarea name="system.Overdrive" cols="30" rows="2">{{item.system.Overdrive}}</textarea></td></tr>
+        
+
+    </table>
+</form>

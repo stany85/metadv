@@ -1,0 +1,114 @@
+Libre d'utilisation
+Système pour Foundry VTT créé par Stany JDR
+Metal Adventures est un jeu de rôle créé par Arnaud Cuidet et publié par Open Sesame Games
+metadv
+
+***Version 1.3.0**
+-Mise à jour compendiums (Le Fer et le sang)
+
+***Version 1.2.8***
+-Correction bugs sur les jets d'initiatives
+-Correction CSS
+
+***Version 1.2.7***
+- Correction Historique feuille PNJ
+
+***Version 1.2.6***
+- Améliorations visuelles!
+- Ajout Compendiums
+
+***Version 1.2.5***
+- Correction CSS ! (Merci @Sasmira !)
+- Ajout Compendiums
+
+***Version 1.2.4***
+- Refonte complète CSS ! (Merci @Sasmira !)
+
+***Version 1.2.3***
+- Correction bug fiche Hero et PNJ
+
+***Version 1.2.2***
+- Correction CSS barre de défilement
+- Ajout Vaisseaux (compendiums)
+
+***Version 1.2.1***
+- Ajout de la feuille Acteur "Loot"
+- Améliorations CSS
+- Ajout token par défaut lors de création Acteur
+
+***Version 1.2.0***
+- Corrections typo des Compendiums
+- Refonte template PNJ
+- Fonctionnalités de jet retravailles + CSS en header des fiches PNJ et Hero
+
+***Version 1.1.8***
+- Enrichisssement des Compendiums
+- Ajout fonctionnalité : Accessoires vaisseaux
+
+***Version 1.1.7***
+- Lancement des dés depuis l'arme utilisée, liée à la compétence associée
+
+***Version 1.1.6***
+- Correctio bonus négatif
+- Design global amélioré
+
+***Version 1.1.5***
+- Ajout Logo Metal Aventure
+- Corrections typo Compendiums
+- Design Chat amélioré
+
+***Version 1.1.4***
+- Design fiches amélioré
+- Corrections typo Compendiums
+
+***Version 1.1.3***
+- correction bug calcul Metal Factor dépensé
+- Trigger ajouté sur les compétences fermées
+- Design fiches amélioré
+
+***Version 1.1.2***
+- Ajout Gestion des radix (feuille vaisseau)
+
+***Version 1.1.1***
+- Ajout fonctionnalité gestion des membres de vaisseau
+- Ajout Notes (version html) dans fiche vaisseau
+
+***Version 1.1.0***
+- Ajout fonctionnalité gestion de soute vaisseau
+- Alerte dépassement Encombrement limite de stockage Vaisseau
+- Gestion des membres de batterie Vaisseau avec alertes
+- ajout onglet  "Notes" feuille Vaisseau avec Editeur html
+
+***Version 1.0.8***
+- fonctionnalité des quantité sur les objets
+- Réglage des points MF utilisé si humain (MF-1)
+- Refonte feuille actor "Vaisseau"
+
+***Version 1.0.7***
+- Correction suppression/ajout objets
+
+***Version 1.0.6***
+- Modification feuille PNJ
+- Modification feuille Vaisseau / Ajout fonctionnalité Soute
+
+***Version 1.0.5***
+- Correction jet PNJ
+- Améliorations CSS (feuille hero)
+
+***Version 1.0.4***
+- Ajout types de jets initiative
+
+
+***Version 1.0.3***
+Ajout des type de dés seconde chance et essaie encore une fois
+visuels des jets de dés dans le chat
+
+***Version 1.0.2***
+- amélioration CSS
+Ajout fonctionnalité munitions armes
+
+***Version 1.0.1***
+Correction bug jet de dés
+
+***Version 1.0.0***
+Version initiale

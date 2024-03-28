@@ -1,0 +1,15 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}"  class="imgArchetype" system-edit="img" title="{{item.name}}"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+    </header>
+    <hr />
+    <table class="attribut">
+        <tr><td><h3>Capacité spéciale</h3><textarea name="system.CapaciteSpeciale" cols="30" rows="5">{{item.system.CapaciteSpeciale}}</textarea></td></tr>
+        <tr><td><h3>Domaines privilégiés</h3><textarea name="system.DomPrivilegies" cols="30" rows="1">{{item.system.DomPrivilegies}}</textarea></td></tr>   
+        <tr><td><h3>Compétences de départ</h3><textarea name="system.CompDep" cols="30" rows="3">{{item.system.CompDep}}</textarea></td></tr> 
+        <tr><td><h3>Compétences optionnelles</h3><textarea name="system.CompOption" cols="30" rows="3">{{item.system.CompOption}}</textarea></td></tr> 
+        <tr><td><h3>Equipement de départ</h3><textarea name="system.Equipement" cols="30" rows="5">{{item.system.Equipement}}</textarea></td></tr>
+        <tr><td><h3>le {{item.name}}</h3><textarea name="system.Description" cols="30" rows="10">{{item.system.Description}}</textarea></td></tr>          
+    </table>
+</form>

@@ -1,0 +1,76 @@
+<form class="{{cssClass}} {{actor.type}}" autocomplete="off">
+<script src="https://use.fontawesome.com/1ecf590610.js"></script>
+  {{!-- Entete--}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="150" width="150"/>
+    <div class="header-fields">
+      <div ="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></div>
+  </header>
+
+  {{!-- Menu onglets --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    {{!-- Default tab is specified in actor-sheet.mjs --}}
+    <div class="item" data-tab="general">Contenu de {{actor.name}}</div>
+
+   {{!--  <a class="item" data-tab="effects">Effects</a>--}}
+  </nav>
+
+  {{!-- Feuille principale--}}
+  <section class="sheet-body">
+
+    {{!-- Onglet général --}}
+    <div id="bloc1" class="tab biography"  data-group="primary" data-tab="general">
+<ol class="item-list">
+  <li class="item flexrow items-header">
+  </li>
+
+  <div class="containerloot">
+    <div class="titreLoot"><i class="fa-solid fa-gun"></i> Armement</div>
+    <div class="saut"></div>
+     {{#each armes as |item id|}}
+     <div class="item" data-item-id="{{item._id}}">
+     <div class="listeArmeImg"><img src="{{item.img}}" title="{{item.name}}" class="etiquetteimg" width="32" height="32"/></div>             
+     <div class="lootNom"><details><summary><a class="item-control item-edit">{{item.name}}</a></summary><div class="listeDetailsLoot">{{item.system.Description}}</div></details></div>
+     <div class="listeArmeSuppr"><a class="item-control item-delete" title="Supprimer"> <i class="fas fa-trash"></i></a></div>           
+     <div class="saut"></div>
+     </div>
+     {{/each}}
+ </div>
+
+  <div class="containerloot">
+    <div class="titreLoot"><i class="fa-solid fa-shield-halved"></i> Protection</div>
+    <div class="saut"></div>
+     {{#each armures as |item id|}}
+     <div class="item" data-item-id="{{item._id}}">
+     <div class="listeArmeImg"><img src="{{item.img}}" title="{{item.name}}" class="etiquetteimg" width="32" height="32"/></div>             
+     <div class="lootNom"><details><summary><a class="item-control item-edit">{{item.name}}</a></summary><div class="listeDetailsLoot">{{item.system.Description}}</div></details></div>
+     <div class="listeArmeSuppr"><a class="item-control item-delete" title="Supprimer"> <i class="fas fa-trash"></i></a></div>           
+     <div class="saut"></div>
+     </div>
+     {{/each}}
+ </div>
+
+  <div class="containerloot">
+    <div class="titreLoot"><i class="fa-solid fa-screwdriver-wrench"></i> Equipement</div>
+    <div class="saut"></div>
+     {{#each objets as |item id|}}
+     <div class="item" data-item-id="{{item._id}}">
+     <div class="listeArmeImg"><img src="{{item.img}}" title="{{item.name}}" class="etiquetteimg" width="32" height="32"/></div>             
+     <div class="lootNom"><details><summary><a class="item-control item-edit">{{item.name}}</a></summary><div class="listeDetailsLoot">{{item.system.Description}}</div></details></div>
+     <div class="listeArmeSuppr"><a class="item-control item-delete" title="Supprimer"> <i class="fas fa-trash"></i></a></div>           
+     <div class="saut"></div>
+     </div>
+     {{/each}}
+ </div>
+
+
+
+
+
+</ol>
+
+
+    </div>
+  </section>
+</form>
+

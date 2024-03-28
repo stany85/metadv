@@ -1,0 +1,12 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}"  class="imgHero" data-edit="img" title="{{item.name}}" height="128" width="128"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+    </header>
+    <hr />
+    <table class="attribut">
+        <tr><td>Archétype :</td><td><input type="text" value="{{item.system.ArchetypeLie}}" name="system.ArchetypeLie"></td></tr>
+        <tr><td>Type d'action :</td><td><input type="text" value="{{item.system.TypeAction}}" name="system.TypeAction"></td></tr>
+        <tr><td colspan="2"><textarea name="system.Description" cols="40" rows="16">{{item.system.Description}}</textarea></td></tr>
+    </table>
+</form>

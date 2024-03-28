@@ -1,0 +1,807 @@
+:root{
+    --glassy: 0px 0px 3px 0px rgba(255, 255, 255, 0.4) inset, 0px 0px 2px 1px rgba(0, 0, 0, 1), 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    --glassy-shadow: var(--glassy) , var(--box-shadow);
+    --glass-bg: rgba(20, 20, 20, 0.6);
+    --glass-bg-light: rgba(255, 255, 255, 0.1);
+    --glass-bg-dark: rgba(0, 0, 0, 0.7);
+    --pf2e-shadow-is-dark: 0px 1px var(--pf2e-half-transparent-dark);
+    --pf2e-translucent-middle: var(--pf2e-translucent-middle-for-light);
+    --pf2e-translucent-middle-for-light: hsla(0, 0%, 80%,0.5);
+    --pf2e-translucent-very: var(--pf2e-translucent-very-for-light);
+    --pf2e-transcluent-very-for-light: hsla(0, 0%, 60%,0.2);
+    --header-text-shadow: var(--pf2e-shadow-is-dark);
+    --pf2e-shadow-is-dark: 0px 1px var(--pf2e-half-transparent-dark);
+    --filter-dark: invert(100%) drop-shadow(0px 1px 1px black);
+    --pf2e-half-transparent-dark: hsla(0, 0%, 0%,0.5);
+    --color-text-hyperlink: #ff6400;
+    --gold-and-glow: 0 0 0 1px var(--tertiary), 0 0 0 2px #9f725b, inset 0 0 3px rgba(255, 255, 255, .5);
+    --red: #5e0000;
+    --red-light:#ff0000;
+    --custom-trait:#61180e;
+    --green: #91a82a;
+    --pfui-main-color: #cfbda7;
+    --pfui-main-grey-color: #98968a;
+    --rpg-styled-ui-color: #837360;
+    --primary-remaster: hsl(153, 100%, 8%);
+	--primary-light-remaster: hsl(170, 96%, 19%);
+    
+    --background: #100d0d;
+    --background-2: #ffffff14;
+    --border-radius: 3px;
+    --border-radius-5: 5px;
+    --box-shadow: 0px 1px 3px 1px black;
+    --box-shadow-light: inset 0 0 0 1px rgba(255, 255, 255, 0.15), inset 0 0 0 2px rgba(0, 0, 0, 0.4), inset 0px 0px 3px 1px var(--color-cool-3);
+    --text-shadow: 0px 1px 2px black;
+
+    --rarity-common: #7e7e7e;
+    --rarity-uncommon: #ff6400;
+    --rarity-rare: #0062ff;
+    --rarity-unique: #e127e1;
+
+
+/* Foundry2
+====================================================== */
+    --color-warm-1: #ee9b3a;
+    --color-warm-2: #c9593f;
+    --color-warm-3: #5d142b;
+    --color-warm-4: #420418;
+    --color-warm-5: #26020d;
+    --color-cool-1: #b1a0d4;
+    --color-cool-2: #79689c;
+    --color-cool-3: #584a75;
+    --color-cool-4: #302831;
+    --color-cool-5: #0b0a13;
+    --color-cool-5-25: rgba(11, 10, 19, 0.25);
+    --color-cool-5-50: rgba(11, 10, 19, 0.5);
+    --color-cool-5-75: rgba(11, 10, 19, 0.75);
+    --color-cool-5-90: rgba(11, 10, 19, 0.9);
+    --color-light-1: #f7f3e8;
+    --color-light-2: #efe6d8;
+    --color-light-3: #e7d1b1;
+    --color-light-4: #d0b8a3;
+    --color-light-5: #9f8475;
+    --color-light-6: #816b66;
+    --color-level-error: #ce0707;
+    --color-level-error-bg: rgba(105, 0, 8, 0.8);
+    --color-level-error-border: #750003;
+    --color-level-info: #59a1f6;
+    --color-level-info-bg: rgba(47, 80, 132, 0.8);
+    --color-level-info-border: #5c87b9;
+    --color-level-success: #26b231;
+    --color-level-success-bg: rgba(26, 107, 34, 0.8);
+    --color-level-success-border: #1b8f23;
+    --color-level-warning: #ee9b3a;
+    --color-level-warning-bg: rgba(214, 150, 0, 0.8);
+    --color-level-warning-border: #b18404;
+    --color-scrollbar: #5d142b;
+    --color-scrollbar-border: #8d151b;
+}
+
+@font-face {
+    font-family: "EarthOrbiter";
+    src: url("./fonts/EarthOrbiterBold-vzD9.otf")format("opentype");
+}
+
+/*Automated Animations
+************************/
+/* https://github.com/DFreds/dfreds-effects-panel */
+#AA-autorec-settings .window-content > *, 
+#AA-item-settings .window-content > *, 
+#AA-ae-settings .window-content > * {
+    color: var(--pfui-main-color);
+    background-color: var(--color-cool-5-25);
+    border: none;
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    text-shadow: 0 0 15px var(--red-light);
+    filter: drop-shadow(0px 1px 1px black);
+    box-shadow: var(--glassy);
+}
+header.svelte-auto-1g5ic18 ul li.svelte-auto-1g5ic18 {
+    color: var(--color-warm-1);
+}
+.aa-tabs.svelte-auto-1gugmsw button.svelte-auto-1gugmsw {
+    color: var(--color-warm-1);
+}
+.aa-tabs.svelte-auto-1gugmsw.svelte-auto-1gugmsw {
+    color: var(--pfui-main-color);
+    background-color: var(--color-cool-5-25);
+    border: none;
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    text-shadow: 0 0 15px var(--red-light);
+    filter: drop-shadow(0px 1px 1px black);
+    box-shadow: var(--glassy);
+}
+
+
+/*Dfreds effects panel
+************************/
+/* https://github.com/DFreds/dfreds-effects-panel */
+.effect-panel .effect-item .temporary.icon {
+    border-radius: 10%;
+    text-shadow: 0 0 15px var(--red-light);
+    filter: drop-shadow(0px 1px 1px black);
+    background-color: var(--color-cool-5-25);
+    backdrop-filter: blur(5px);
+    box-shadow: var(--glassy-shadow);
+}
+
+
+/* Dice Tray */
+/* https://gitlab.com/asacolips-projects/foundry-mods/foundry-vtt-dice-calculator */
+
+.dice-tray {
+    position: relative;
+    padding: 0 4px;
+}
+.dice-tray button div.dice {
+    background-color: var(--pfui-main-grey-color);
+}
+.dice-tray button div.dice:hover {
+    background-color: #ff6400!important;    
+}
+
+.dice-tray button {
+    border-radius: var(--border-radius)!important;
+    text-align: center;
+    background: var(--color-cool-5-25)!important;
+    border: 1px solid var(--red)!important;
+    box-shadow: var(--box-shadow)!important;
+    backdrop-filter: blur(3px); /* Impact Perf */
+}
+.dice-tray button:hover {
+    --color-text-hyperlink: #ff6400;
+    color: var(--color-text-hyperlink)!important;
+    border-color: var(--color-text-hyperlink)!important;
+    box-shadow: 0 0 6px inset var(--color-text-hyperlink)!important;
+}
+.dice-tray input[type="text"] {
+    color: var(--color-warm-1)!important;
+    background: radial-gradient(var(--color-cool-5-50), transparent)!important;
+    box-shadow: var(--glassy-shadow);
+    backdrop-filter: blur(5px);
+}
+.dice-calculator > button, .dice-calculator .dice-calculator--button {
+    color: var(--color-warm-1)!important;
+}
+
+
+/*Module-Management
+************************/
+/* https://github.com/mouse0270/module-credits */
+#module-management .package-list .package {
+    border-bottom: 1px dotted var(--color-cool-1);
+    background: var(--color-cool-5-25);
+}
+#module-management .package-list .package .package-overview .tag.expand {
+    background: var(--glass-bg-light);
+    border: 1px solid var(--color-cool-1);
+    color: var(--color-warm-1);
+    box-shadow: var(--box-shadow);
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: var(--text-shadow);
+    margin-bottom: -2px;
+}
+#module-management .package-list .package .tag {
+    box-shadow: var(--box-shadow);
+    text-shadow: var(--text-shadow);
+}
+#module-management nav.list-filters button {
+    border: 1px solid transparent;
+    border-radius: 15px;
+    flex: 0 0 32px;
+    height: 30px;
+    margin: 0px;
+    box-shadow: var(--box-shadow);
+}
+#module-management .package-list {
+    border-top: 1px solid transparent;
+}
+#module-management nav.list-filters input {
+    background: var(--color-cool-5-90);
+    color: var(--color-warm-1);
+    border: 1px solid transparent;
+    font-size: larger;
+    border-radius: 5px;
+    margin: 1px;
+    height: 25px;
+    text-shadow: var(--text-shadow);
+    box-shadow: var(--box-shadow-light);
+}
+#module-management .package-list .package-title {
+    color: var(--sta-main-color);
+    text-shadow: var(--text-shadow);
+}
+#module-management nav.list-filters a.filter.active {
+    background: var(--color-cool-5-25);
+    border-bottom: 2px solid var(--red-light);
+}
+#module-management .package-list .package-metadata, 
+#module-management .package-list .package-description {
+    color: white;
+}
+
+/* Monk's Enhanced Journal */
+/*https://github.com/ironmonk88/monks-enhanced-journal*/
+.monks-enhanced-journal.app {
+    background: transparent!important;
+    backdrop-filter: blur(5px);
+    filter: drop-shadow(0px 1px 1px black);
+}
+.monks-enhanced-journal .enhanced-journal-header {
+    background-color: unset;
+}
+.monks-enhanced-journal .tab-bar .tab-button {
+    color: var(--color-warm-1);
+}
+.monks-enhanced-journal .tab-bar .tab-button:hover {
+    --color-text-hyperlink: #ff6400;
+    color: var(--color-text-hyperlink);
+    text-shadow: 0 0 8px var(--color-text-hyperlink);
+}
+.monks-enhanced-journal .tab-bar .journal-tab.active, 
+.monks-enhanced-journal .tab-bar .journal-tab:last-child {
+    border-radius: 0 17px 0 17px;
+    margin-right: 3px;
+    border: 1px solid var(--red);
+    text-shadow: 0 0 15px var(--red-light);
+    background: var(--color-cool-5-90);
+    --color-text-hyperlink: #ff6400;
+    color: var(--color-text-hyperlink);
+    border-color: var(--color-text-hyperlink);
+    box-shadow: 0 0 6px inset var(--color-text-hyperlink);
+}
+.monks-enhanced-journal .tab-bar .journal-tab {
+    border-radius: 0 17px 0 17px;
+    margin-right: 5px;
+    border: 1px solid var(--red);
+    color: var(--pfui-main-color);
+    background-color: var(--color-cool-5-25);
+    text-shadow: 0 0 15px var(--red-light);
+    box-shadow: var(--box-shadow);
+}
+.monks-enhanced-journal .tab-bar .journal-tab:hover,
+.monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button:hover {
+    background: var(--color-cool-4);
+    --color-text-hyperlink: #ff6400;
+    color: var(--color-text-hyperlink)!important;
+    border-color: var(--color-text-hyperlink)!important;
+    box-shadow: 0 0 6px inset var(--color-text-hyperlink)!important;
+}
+.monks-enhanced-journal .enhanced-journal-header > * {
+    border-bottom: 1px dotted var(--color-warm-3);
+}
+.monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button.add-bookmark {
+    border: 1px solid var(--color-warm-1);
+    color: var(--pfui-main-color);
+    background: var(--color-cool-5-25);
+}
+.monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button {
+    border-radius: 0 17px 0 17px;
+    border-color: var(--color-cool-2);
+    color: var(--color-cool-1);
+    background: var(--color-cool-5-90);
+    text-shadow: 0 0 15px var(--red-light);
+}
+.monks-enhanced-journal .enhanced-journal-header .navigation {
+    color: var(--color-warm-1);
+    background-color: var(--color-cool-5-75)!important;
+    border-radius: var(--border-radius-5)!important;
+    text-shadow: 0 0 15px var(--red-light);
+    border: 1px solid var(--red);
+    box-shadow: var(--box-shadow);
+}
+.monks-enhanced-journal .enhanced-journal-header .navigation .nav-button.disabled {
+    border-color: unset;
+    color: var(--pfui-main-color);
+    Background: radial-gradient(var(--color-cool-4), var(--color-cool-5-90));
+    border-radius: 25px;
+    box-shadow: var(--glassy);
+    text-shadow: 0 0 15px var(--red-light);
+    border: unset;
+}
+.monks-enhanced-journal .enhanced-journal-header .navigation .nav-button:not(.disabled):hover {
+    background: var(--color-cool-5-25);
+    --color-text-hyperlink: #ff6400;
+    color: var(--color-text-hyperlink)!important;
+    border-color: var(--color-text-hyperlink)!important;
+    box-shadow: 0 0 6px inset var(--color-text-hyperlink)!important;
+}
+.monks-enhanced-journal .enhanced-journal-header .navigation hr.vertical {
+    border-right: 1px dotted var(--color-warm-3);
+}
+.monks-enhanced-journal .enhanced-journal-header .navigation .nav-button {
+    Background: radial-gradient(var(--color-cool-4), var(--color-cool-5-90));
+    box-shadow: var(--glassy);
+    text-shadow: 0 0 15px var(--red-light);
+    border: 1px solid var(--color-warm-3);
+}
+.monks-enhanced-journal .enhanced-journal-header .navigation .nav-button:hover {
+    color: var(--color-warm-1);
+    background-color: var(--color-cool-5-75);
+    box-shadow: var(--box-shadow);
+    animation: glow 0.75s infinite alternate;
+}
+.monks-enhanced-journal .enhanced-journal .journal-sheet-container .sidebar.directory {
+    background: transparent;
+}
+.journal-entry.journal-sheet .directory .directory-list {
+    border-right: 1px dotted var(--color-warm-3);
+    padding: unset;
+}
+.monks-enhanced-journal .enhanced-journal .sheet.journal-entry .journal-entry-content {
+    background: var(--color-cool-5-50);
+}
+.monks-enhanced-journal .directory-sidebar {
+    background: transparent;
+    border-left: 1px dotted var(--color-warm-3);
+}
+.monks-enhanced-journal .directory-sidebar > section .directory-header {
+    background-color: transparent;
+    border-bottom: 1px dotted var(--color-warm-3);
+    color: unset;
+}
+.monks-enhanced-journal .directory .directory-header .header-actions.action-buttons button {
+    font-family: 'EarthOrbiter';
+    text-transform: inherit;
+    color: var(--pfui-main-color);
+    Background: radial-gradient(var(--color-cool-4), var(--color-cool-5-90));
+    border-radius: 25px;
+    box-shadow: var(--glassy);
+    backdrop-filter: blur(5px);
+    text-shadow: 0 0 15px var(--red-light);
+    filter: drop-shadow(0px 1px 1px black);
+    border: unset;
+}
+.monks-enhanced-journal .directory .directory-header .header-actions.action-buttons button:hover {
+    color: var(--color-warm-1)!important;
+    background-color: var(--color-cool-5-75);
+    box-shadow: var(--box-shadow-light)!important;
+    animation: glow 0.75s infinite alternate;
+}
+.monks-enhanced-journal .enhanced-journal-footer {
+    padding: 5px 6px;
+    border-top: 1px solid var(--mej-footer-border);
+    color: var(--color-warm-1);
+    background-color: var(--color-cool-5-75)!important;
+    border-radius: var(--border-radius-5)!important;
+    text-shadow: 0 0 15px var(--red-light);
+    border: 1px solid var(--red);
+    box-shadow: var(--box-shadow);
+}
+.monks-enhanced-journal .enhanced-journal-footer .nav-button {
+    border-color: unset;
+    color: var(--pfui-main-color);
+    Background: radial-gradient(var(--color-cool-4), var(--color-cool-5-90));
+    box-shadow: var(--glassy);
+    text-shadow: 0 0 15px var(--red-light);
+    border: unset;
+}
+.monks-enhanced-journal .enhanced-journal-footer .nav-button:not(.disabled):hover {
+    cursor: pointer;
+    text-shadow: 0 0 8px red;
+    background: var(--color-cool-5-25);
+    --color-text-hyperlink: #ff6400;
+    color: var(--color-text-hyperlink)!important;
+    border-color: var(--color-text-hyperlink)!important;
+    box-shadow: 0 0 6px inset var(--color-text-hyperlink)!important;
+}
+.monks-journal-sheet.sheet .journal-subsheet.blank .recently-viewed {
+    font-family:"EarthOrbiter";
+    border-radius: 5px;
+    color: var(--sta-main-color);
+    background-color: var(--color-cool-5-50);
+    border: 1px solid var(--red-swffg);
+}
+.monks-journal-sheet.sheet .journal-subsheet.blank .recent-link, 
+.monks-journal-sheet.sheet .journal-subsheet.blank .new-link {
+    color: var(--color-cool-1);
+}
+.monks-journal-sheet.sheet .journal-subsheet.blank .recent-link:hover, 
+.monks-journal-sheet.sheet .journal-subsheet.blank .new-link:hover {
+    --color-text-hyperlink: #ff6400;
+    text-shadow: 0 0 8px var(--color-text-hyperlink);
+    color: var(--sta-main-color);
+}
+
+
+/* Monk's hotbar expansion */
+/* https://foundryvtt.com/packages/monks-hotbar-expansion */
+#hotbar .hotbar-page {
+    overflow: visible;
+    gap: 4px;
+    bottom: 70px;
+}
+#hotbar .action-bar.no-arrows + .bar-controls span.page-number, #hotbar .hotbar-page .bar-controls span.page-number, #hotbar .hotbar-page .bar-controls i {
+    box-shadow: var(--box-shadow-light);
+    background: var(--color-cool-5-75);
+    border: 1px solid var(--color-warm-1);
+    backdrop-filter: blur(3px);
+}
+#hotbar .hotbar-page .action-bar {
+    margin: 0px 5px 0px 3px;
+}
+#hotbar .bar-controls {
+    border-radius: var(--border-radius);
+    background: none;
+    background-color: var(--color-cool-5-50);
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--color-border-dark);
+}
+#hotbar .hotbar-page .macro-list {
+    gap: 8px;
+    margin: -4px 31px 0px 0px;
+    border: none;
+}
+
+
+/* Monk's Little Details */
+/*https://github.com/ironmonk88/monks-little-details*/
+.group-header {
+    background-color: var(--color-cool-5-50);
+    box-shadow: var(--box-shadow);
+    text-shadow: 0 0 15px var(--red-light);
+}
+#token-hud.monks-little-details .status-effects .effect-control {
+  border-radius: unset;
+}
+#token-hud.placeable-hud.monks-little-details .status-effects {
+  background: none;
+  filter: brightness(1.1) saturate(1);
+}
+#token-hud.placeable-hud.monks-little-details .status-effects .effect-control {
+  border: none;
+  opacity: unset;
+  border-radius: var(--border-radius);
+}
+#token-hud.placeable-hud.monks-little-details .status-effects .effect-control.active {
+    border: 1px solid var(--color-cool-5);
+    opacity: 1;
+    background: linear-gradient(45deg, var(--color-cool-3), var(--color-cool-5));
+    box-shadow: 0px 5px 20px 3px black, 0px 0px 50px 30px color-mix(in srgb, var(--color-cool-5) 10%, transparent);
+    filter: brightness(1.1) saturate(1.5);
+    border-radius: var(--border-radius-5);
+    text-shadow: 0px 1px 2px black;
+}
+#token-hud.placeable-hud.monks-little-details .status-effects .effect-control.active .effect-name {
+    color: var(--pfui-main-color);
+  opacity: unset;
+}
+#token-hud.placeable-hud.monks-little-details .status-effects .effect-name {
+  opacity: unset;
+  padding-right: 4px;
+  color: var(--pfui-main-color);
+  font-size:  12px;
+}
+#token-hud.monks-little-details .status-effects .clear-all {
+    bottom: 103%;
+    right: 1px;
+    padding: 1px 17px 1px 17px;
+    color: var(--pfui-main-color);
+    box-shadow: var(--box-shadow);
+    filter: sepia(1) brightness(0.6);
+    text-shadow: 0px 0px 3px black;
+    background: linear-gradient(45deg, var(--color-cool-3), var(--color-cool-5-25));
+}
+#token-hud.monks-little-details .status-effects .clear-all:hover {
+    opacity: 1;
+    filter: contrast(1);
+}
+.compendium-sidebar .directory-list .compendium-type h3 {
+    font-family: 'EarthOrbiter';
+    text-transform: inherit;
+    color: var(--pfui-main-color);
+    background-color: var(--color-cool-5-50);
+    border-radius: 25px 0 0 25px;
+    backdrop-filter: blur(5px);
+    text-shadow: 0 0 15px var(--red-light);
+    filter: drop-shadow(0px 1px 1px black);
+    box-shadow: var(--glassy);
+}
+
+
+/* Monk's TokenBar */
+/* https://github.com/ironmonk88/monks-tokenbar */
+:root{
+    --monks-border-color: #6b6155;
+}
+#tokenbar .token {
+    border: 1px solid transparent;
+    border-radius: unset;
+    margin: 2px;
+    text-shadow: 0 0 15px var(--red-light);
+    background: unset;
+    box-shadow: unset;
+}
+#tokenbar .bar-controls div#tokenbar-move-handle {
+    background: unset;
+}
+#tokenbar .token-list {
+    border: 1px solid transparent;
+}
+#tokenbar .bar-controls > div > .toggle-collapse {
+    color: var(--color-warm-1);
+}
+#tokenbar .token .token-icon {
+    border: none;
+    box-shadow: unset;
+    background: transparent;
+    backdrop-filter: blur(5px);
+}#tokenbar .token .token-stat i {
+    color: var(--green);
+    filter: drop-shadow(0px 1px 1px black);
+}
+#tokenbar .token .token-stat {
+    color: var(--color-warm-1)!important;
+    filter: drop-shadow(0px 1px 1px black);
+}
+#tokenbar .token .token-stats {
+    background: var(--color-cool-5-75);
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    filter: drop-shadow(0px 1px 1px black);
+}
+#tokenbar .bar-controls {
+    color: var(--pfui-main-color);
+    text-shadow: var(--text-shadow);
+    border: 1px solid transparent;
+    box-shadow: unset;
+    background: var(--color-cool-5-75);
+    border-radius: 5px;
+    backdrop-filter: blur(5px);
+    text-shadow: 0 0 15px var(--red-light);
+    filter: drop-shadow(0px 1px 1px black);
+}
+#tokenbar .bar-controls .tokenbar-buttons div.active:not(.disabled) i, 
+#tokenbar[movement="free"] #movement-free:not(.disabled) i, 
+#tokenbar[movement="none"] #movement-none:not(.disabled) i, 
+#tokenbar[movement="combat"] #movement-combat:not(.disabled) i {
+    color: var(--color-warm-1);
+    border: 1px solid var(--color-warm-2);
+    text-shadow: 0 0 15px var(--red-light);
+    filter: contrast(1.5);
+}
+
+#chat .monks-tokenbar.chat-card .card-header {
+    padding: 3px 0;
+    border-top: 2px groove var(--monks-border-color);
+    border-bottom: 2px groove var(--monks-border-color);
+}
+
+#chat .monks-tokenbar.chat-card .card-footer {
+    border-top: 2px groove var(--monks-border-color);
+}
+
+#chat .monks-tokenbar.chat-card .card-footer span {
+    border-right: 2px groove var(--monks-border-color);
+    font-size: 9px;
+}
+
+.monks-tokenbar .footer-button {
+    width: 18px;
+    height: 18px;
+    float: right;
+    font-size: 11px;
+    line-height: 11px;
+    padding: 0px 2px;
+}
+
+#chat .monks-tokenbar .sheet .items-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    color: var(--pfui-main-color);
+}
+
+#chat .monks-tokenbar.chat-card .card-header h3 {
+    color: var(--pfui-main-color)
+}
+
+#chat #requestsavingthrow .request-header {
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow-x: hidden;
+    color: var(--pfui-main-color);
+    background: black;
+    border: 2px solid var(--border-color);
+    padding: 1px 8px;
+}
+
+#chat .monks-tokenbar .sheet .items-list .item-name h3,
+#chat .monks-tokenbar .sheet .items-list .item-name h4 {
+    margin: 0;
+    white-space: nowrap;
+    overflow-x: hidden;
+    color: var(--pfui-main-color);
+    font-weight: bold;
+    padding: 1px 4px;
+
+    background: rgba(0, 0, 0, 0.43);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+}
+
+#chat .monks-tokenbar .sheet .items-list .items-header {
+    height: 28px;
+    margin: 2px 0;
+    padding: 0;
+    align-items: center;
+    font-weight: bold;
+    flex-wrap: nowrap;
+
+    background: rgba(0, 0, 0, 0.43);
+    border: 1px solid transparent;
+    border-radius: var(--border-radius);
+}
+
+#chat .monks-tokenbar.chat-card .sheet .items-list {
+    padding: 0;
+}
+.monks-tokenbar .sheet .items-list .items-header {
+    color: var(--color-warm-1);
+    background: none;
+    background-color: var(--color-cool-5-75)!important;
+    border-radius: var(--border-radius-5)!important;
+    margin: 3px 0px!important;
+    backdrop-filter: blur(5px);
+    text-shadow: 0 0 15px var(--red-light);
+    border: 1px solid var(--red);
+    filter: drop-shadow(0px 1px 1px black);
+    box-shadow: var(--box-shadow);
+}
+.monks-tokenbar .sheet .items-list .item:last-child {
+    border-bottom: none;
+    color: var(--green);
+    text-shadow: var(--text-shadow);
+    border-radius: 25px;
+}
+.monks-tokenbar.editstats .tt-menu {
+    color: var(--pfui-main-color);
+    background-color: var(--color-cool-5-90);
+}
+.monks-tokenbar.pick-icon .font-picker .icon {
+    background-color: var(--color-cool-5-25);
+    color: var(--green);
+    text-shadow: var(--text-shadow);
+    border-radius: 25px;
+}
+
+/* Carousel Combat Tracker */
+/* https://github.com/theripper93/combat-tracker-dock */
+#combat-dock .combatant-portrait {
+    background: unset;
+    border-left: unset;
+    border-right: unset;
+    backdrop-filter: blur(3px);
+}
+#combat-dock .combatant-portrait.active {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    border-bottom: unset;
+    backdrop-filter: blur(5px);
+    background: var(--background-2);
+    box-shadow: 0 0 0 1px var(--color-warm-1), 0 0 0 2px #9f725b, inset 0 0 4px rgba(0, 0, 0, 0.25);
+    animation: glow 0.75s infinite alternate!important;
+}
+#combat-dock .combatant-wrapper .image-border {
+    --combatant-portrait-image-border: url(../assets/combat-tracker-dock/border.webp);
+    background-image: var(--combatant-portrait-image-border)!important;
+    bottom: -22%;
+    opacity: 1;
+}
+
+#combat-dock .separator {
+    border: 2px solid var(--green)!important;
+    filter: contrast(2);
+    text-shadow: var(--text-shadow)!important;
+    opacity: 1!important;
+}
+#combat-dock .roll-initiative {
+    color: var(--color-warm-1)!important;
+    filter: contrast(2);
+    text-shadow: var(--text-shadow)!important;
+}
+#combat-dock .roll-initiative:hover {
+    color: var(--color-warm-2)!important;
+    text-shadow: var(--text-shadow);
+}
+
+#combat-dock .buttons-container i {
+    color: var(--green)!important;
+    filter: contrast(2);
+    --text-shadow: 0px 1px 3px black;
+    text-shadow: var(--text-shadow)!important;
+    border: 1px solid var(--color-cool-5)!important;
+    border-radius: 50%!important;
+    background: var(--color-cool-4)!important;
+    box-shadow: 0px 0px 6px var(--color-warm-1), 0px 2px 8px 1px var(--color-warm-2)!important;
+    width: 2rem!important;
+    height: 2rem!important;
+}
+#combat-dock .buttons-container i:hover {
+    color: var(--color-warm-2)!important;
+    text-shadow: var(--text-shadow)!important;
+    fill: var(--color-warm-1)!important;
+    background: var(--color-cool-4)!important;
+    box-shadow: 0 0 0 1px var(--color-warm-1), 0 0 0 2px #9f725b, inset 0 0 4px rgba(0, 0, 0, 0.25)!important;
+    animation: glow 0.75s infinite alternate!important;
+    filter: contrast(2)!important;
+    border: 1px solid var(--color-cool-5)!important;
+}
+#combat-dock .combatant-wrapper .portrait-initiative {
+    color: var(--pfui-main-color);
+    opacity: 1!important;
+    filter: contrast(2);
+    text-shadow: var(--text-shadow);
+}
+#combat-dock .combatant-wrapper .portrait-initiative i {
+    color: var(--color-warm-2);
+    text-shadow: var(--text-shadow);
+}
+#combat-dock .combatant-wrapper .combatant-buttons {
+    color: var(--color-warm-1)!important;
+    filter: contrast(2);
+    text-shadow: var(--text-shadow);
+}
+#combat-dock .combatant-wrapper .combatant-buttons i:hover {
+    color: var(--color-warm-2)!important;
+    text-shadow: var(--text-shadow);
+}
+#combat-dock .combatant-wrapper .effects-container li {
+    margin: 2px 0 0 0;
+    border-radius: 50%;
+    border: 1px solid var(--color-warm-2);
+    box-shadow: var(--box-shadow);
+}
+#tooltip.combat-dock-tooltip {
+    color: var(--pfui-main-color);
+    background: none;
+    background-color: var(--color-cool-5);
+    border-radius: var(--border-radius-5);
+    border: 1px solid var(--color-cool-5);
+    box-shadow: var(--glassy-shadow);
+}
+#combat-dock .portrait-pass i {
+    filter: contrast(2);
+    color: var(--color-warm-2);
+    text-shadow: var(--text-shadow);
+}
+#combat-dock .portrait-pass i:hover {
+    filter: contrast(2);
+    color: var(--color-warm-2);
+    text-shadow: var(--text-shadow);
+}
+
+#tooltip.combat-dock-tooltip
+.combat-dock-tooltip-wrapper
+ul
+.effect-description {
+color: var(--pfui-main-grey-color);
+}
+#tooltip.combat-dock-tooltip .combat-dock-tooltip-wrapper ul .effect-description .content-link {
+    color: var(--pfui-main-color);
+    text-shadow: var(--text-shadow);
+    background: var(--color-warm-3);
+    padding: 0px 3px;
+    border: 1px solid var(--glassy);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+}
+#tooltip.combat-dock-tooltip .combat-dock-tooltip-wrapper a.content-link, 
+#tooltip.combat-dock-tooltip .combat-dock-tooltip-wrapper a.inline-roll {
+    color: var(--pfui-main-color);
+    text-shadow: var(--text-shadow);
+    background: var(--color-warm-3);
+    padding: 0px 3px;
+    border: 1px solid var(--glassy);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+}
+#combat-dock-add-event.window-app {
+    background: none;
+    border: none;
+}

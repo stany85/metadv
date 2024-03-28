@@ -1,0 +1,60 @@
+<ol class="item-list">
+  <li class="item flexrow items-header">
+  </li>
+  <div class="container23">
+    <div class="containerheader"><H8><i class="fa-solid fa-gun"> </i>Armes</H8></div>
+    <div class="listeArmeNomTitre">&nbsp;</div>
+    <div class="listeArmeDegatsTitre">Dégats</div> 
+    <div class="listeArmePorteeTitre">Portée</div>     
+    <div class="listeArmeModeTitre">Mode de tir</div> 
+    <div class="saut"></div>
+     {{#each armes as |item id|}}
+     <div class="item" data-item-id="{{item._id}}">
+     <div class="listeArmeImg"><img src="{{item.img}}" title="{{item.name}}" class="etiquetteimg" width="32" height="32"/></div>             
+     <div class="listeArmeNom"><a class="item-control item-edit">{{item.name}}</a></div>
+     <div class="listeArmeDegats">{{item.system.Degats}}</div>
+     <div class="listeArmePortee">{{item.system.Portee}}</div>
+     <div class="listeArmeMode">{{item.system.Mode}}</div>
+     <div class="listeArmeMode"><a class="useweapon" title="Action"><i class="fa-solid fa-crosshairs-simple"></i></a></div>
+     <!-- En dévelopement <div class="useweapon"><a>Utiliser</a></div> -->
+     <div class="listeArmeSuppr"><a class="item-control item-delete" title="Supprimer"> <i class="fas fa-trash"></i></a></div>           
+     </div>
+     <div class="saut"></div>
+    {{#Munition item.system.MunitionMax item.system.Munition}}{{/Munition}}
+     {{/each}}
+ </div>
+ <div class="container23">
+  <div class="containerheader"><H8><i class="fa-solid fa-shield-halved"></i> Armure</H8></div> 
+  <div class="listeArmeNomTitre">&nbsp;</div> 
+  <div class="listeArmePorteeTitre">Protection</div>
+  <div class="saut"></div> 
+   {{#each armures as |item id|}}
+   <div class="item" data-item-id="{{item._id}}">
+   <div class="listeArmeImg"><img src="{{item.img}}" title="{{item.name}}" class="etiquetteimg" width="32" height="32"/></div>             
+   <div class="listeArmeNom"><a class="item-control item-edit">{{item.name}}</a></div>
+   <div class="listeArmeDegats">{{item.system.Protection}}</div>
+   <div class="listeArmeSuppr"><a class="item-control item-delete" title="Supprimer"> <i class="fas fa-trash"></i></a></div>           
+   </div>
+   <div class="saut"></div>
+   {{/each}}
+</div>
+<div class="container23">
+  <div class="containerheader"><H8><i class="fa-solid fa-screwdriver-wrench"></i> Inventaire</H8> <a class="item-control item-create" title="Create item" data-type="Objet"><i class="fas fa-plus"></i> Ajout objet</a></div> 
+  <div class="listeArmeNomTitre">&nbsp;</div>
+  <div class="listeArmePorteeTitre">Quantite</div>
+  <div class="listeArmePorteeTitre">Prix</div>
+  <div class="saut"></div>     
+   {{#each objets as |item id|}}
+   <div class="item" data-item-id="{{item._id}}">
+   <div class="listeArmeImg"><img src="{{item.img}}" title="{{item.name}}" class="etiquetteimg" width="32" height="32"/></div>            
+   <div class="listeArmeNom"><a class="item-edit">{{item.name}}</a></div>
+   <div class="listeArmePortee"><a class="quantity-modify plus-minus-button" data-quantite-value="-1"><i class="fa fa-minus-square-o" aria-hidden="true"></i></a>
+    <b>{{item.system.Quantite}}</b><a class="quantity-modify plus-minus-button" data-quantite-value="-1"></a>
+    <a class="quantity-modify plus-minus-button" data-quantite-value="+1"><i class="fa fa-plus-square-o" aria-hidden="true"></i></a></div>
+   <div class="listeArmePortee">{{item.system.Prix}}</div> 
+   <div class="listeArmeSuppr"><a class="item-delete" title="Supprimer"> <i class="fas fa-trash"></i></a></div>           
+   </div>
+   <div class="saut"></div>
+   {{/each}}
+</div>
+</ol>

@@ -1,0 +1,32 @@
+:root {
+    --pfui-main-grey-color: #98968a;
+    --background: #100d0d;
+    --background-2: #ffffff14;
+}
+
+.tox .tox-tbtn svg {
+    fill: var(--pfui-main-grey-color)!important;
+}
+
+.tox .tox-toolbar-overlord .tox-toolbar:not(.tox-toolbar--scrolling):first-child, .tox .tox-toolbar-overlord .tox-toolbar__primary {
+    background-color: var(--background)!important;
+    box-shadow: none!important;
+}
+
+.tox .tox-tbtn {
+    color: var(--pfui-main-grey-color)!important;
+}
+.tox .tox-tbtn--bespoke {
+    background: var(--background)!important;
+}
+.tox:not(.tox-tinymce-inline) .tox-editor-header {
+    background-color: var(--background)!important;
+}
+.tox.tox-tinymce .tox-edit-area__iframe {
+    background: #ffffff8a;
+}
+
+.mce-content-body {
+    color: var(--pfui-main-grey-color)!important;
+    background: var(--background-2)!important;
+}

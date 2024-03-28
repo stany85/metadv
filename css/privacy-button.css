@@ -1,0 +1,151 @@
+:root{
+  --glassy: 0px 0px 3px 0px rgba(255, 255, 255, 0.4) inset, 0px 0px 2px 1px rgba(0, 0, 0, 1), 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  --glass-bg: rgba(20, 20, 20, 0.6);
+  --glass-bg-light: rgba(255, 255, 255, 0.1);
+  --glass-bg-dark: rgba(0, 0, 0, 0.7);
+  --pf2e-shadow-is-dark: 0px 1px var(--pf2e-half-transparent-dark);
+  --pf2e-translucent-middle: var(--pf2e-translucent-middle-for-light);
+  --pf2e-translucent-middle-for-light: hsla(0, 0%, 80%,0.5);
+  --pf2e-translucent-very: var(--pf2e-translucent-very-for-light);
+  --pf2e-transcluent-very-for-light: hsla(0, 0%, 60%,0.2);
+  --header-text-shadow: var(--pf2e-shadow-is-dark);
+  --pf2e-shadow-is-dark: 0px 1px var(--pf2e-half-transparent-dark);
+  --filter-dark: invert(100%) drop-shadow(0px 1px 1px black);
+  --pf2e-half-transparent-dark: hsla(0, 0%, 0%,0.5);
+  --color-text-hyperlink: #ff6400;
+  --gold-and-glow: 0 0 0 1px var(--tertiary), 0 0 0 2px #9f725b, inset 0 0 3px rgba(255, 255, 255, .5);
+  --red: #5e0000;
+  --red-light:#ff0000;
+  --custom-trait:#61180e;
+  --green: #91a82a;
+  --pfui-main-color: #cfbda7;
+  --pfui-main-grey-color: #98968a;
+  --rpg-styled-ui-color: #837360;
+  --primary-remaster: hsl(153, 100%, 8%);
+--primary-light-remaster: hsl(170, 96%, 19%);
+  
+  --border-radius: 3px;
+  --border-radius-5: 5px;
+  --box-shadow: 0px 1px 3px 1px black;
+  --box-shadow-light: inset 0 0 0 1px rgba(255, 255, 255, 0.15), inset 0 0 0 2px rgba(0, 0, 0, 0.4), inset 0px 0px 3px 1px var(--color-cool-3);
+
+  --ornement : url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='33' height='33' overflow='scroll'%3E%3Cstyle%3E.st1{stroke:wheat;stroke-miterlimit:10}.st1,.st2{fill:none}%3C/style%3E%3Cg opacity='0.75'%3E%3Cpath class='st1' d='M.5 20v-7'/%3E%3Cpath class='st2' d='M13 20v-7'/%3E%3Cpath class='st1' d='M13 .5h7'/%3E%3Cpath class='st2' d='M13 13h7'/%3E%3Cpath class='st1' d='M32.5 13v7'/%3E%3Cpath class='st2' d='M20 13v7'/%3E%3Cpath class='st1' d='M20 32.5h-7'/%3E%3Cpath class='st2' d='M20 20h-7'/%3E%3Cpath class='st1' d='M.5.5h3.1v3.1H.5zm3.1 3.1h3.1v3.1H3.6zm3.2 0h3.1v3.1H6.8zM3.6 6.8h3.1v3.1H3.6zm0 0H.5V13M13 .5H6.8v3.1M29.4.5h3.1v3.1h-3.1zm-3.1 3.1h3.1v3.1h-3.1zm0 3.2h3.1v3.1h-3.1zm-3.2-3.2h3.1v3.1h-3.1zm3.2 0V.5H20M32.5 13V6.8h-3.1M29.4 29.4h3.1v3.1h-3.1z'/%3E%3Cpath class='st1' d='M26.3 26.3h3.1v3.1h-3.1zm-3.2 0h3.1v3.1h-3.1zm3.2-3.2h3.1v3.1h-3.1z'/%3E%3Cpath class='st1' d='M29.4 26.3h3.1V20M20 32.5h6.3v-3.1'/%3E%3Cg%3E%3Cpath class='st1' d='M.5 29.4h3.1v3.1H.5zm3.1-3.1h3.1v3.1H3.6zm0-3.2h3.1v3.1H3.6zm3.2 3.2h3.1v3.1H6.8zM6.8 29.4v3.1H13M.5 20v6.3h3.1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  
+
+  --rarity-common: #7e7e7e;
+  --rarity-uncommon: #ff6400;
+  --rarity-rare: #0062ff;
+  --rarity-unique: #e127e1;
+
+
+/* Foundry2
+====================================================== */
+  --color-warm-1: #ee9b3a;
+  --color-warm-2: #c9593f;
+  --color-warm-3: #5d142b;
+  --color-cool-3: #584a75;
+  --color-cool-4: #302831;
+  --color-cool-5: #0b0a13;
+  --color-cool-5-25: rgba(11, 10, 19, 0.25);
+  --color-cool-5-50: rgba(11, 10, 19, 0.5);
+  --color-cool-5-75: rgba(11, 10, 19, 0.75);
+  --color-cool-5-90: rgba(11, 10, 19, 0.9);
+  --color-light-1: #f7f3e8;
+  --color-light-2: #efe6d8;
+  --color-light-3: #e7d1b1;
+  --color-light-4: #d0b8a3;
+  --color-light-5: #9f8475;
+  --color-light-6: #816b66;
+  --color-level-error: #ce0707;
+  --color-level-error-bg: rgba(105, 0, 8, 0.8);
+  --color-level-error-border: #750003;
+  --color-level-info: #59a1f6;
+  --color-level-info-bg: rgba(47, 80, 132, 0.8);
+  --color-level-info-border: #5c87b9;
+  --color-level-success: #26b231;
+  --color-level-success-bg: rgba(26, 107, 34, 0.8);
+  --color-level-success-border: #1b8f23;
+  --color-level-warning: #ee9b3a;
+  --color-level-warning-bg: rgba(214, 150, 0, 0.8);
+  --color-level-warning-border: #b18404;
+  --color-scrollbar: #5d142b;
+  --color-scrollbar-border: #8d151b;
+}
+
+#rpg-ui-buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 0.5em;
+}
+
+#rpg-ui-buttons button {
+  flex: 0 1 auto;
+  min-height: 36px;
+  max-height: 36px;
+  padding-top: 3px;
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+  border-radius: 5px;
+  color: var(--pfui-main-grey-color);
+  border: 1px solid var(--color-cool-5);
+  background: var(--color-cool-5);
+  text-shadow: unset;
+  box-shadow: unset;
+}
+
+#rpg-ui-buttons button i {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+
+#rpg-ui-buttons button.active i {
+  color: #000;
+}
+
+#rpg-ui-buttons button:hover {
+  --color-text-hyperlink: #ff6400;
+  color: var(--color-text-hyperlink);
+  border-color: var(--color-text-hyperlink);
+  box-shadow: 0 0 6px inset var(--color-text-hyperlink);
+}
+
+#rpg-ui-buttons button[data-id="publicroll"].active {
+  background: none;
+  background-color: var(--green);
+  color: var(--background);
+  box-shadow: var(--box-shadow-light);
+  --color-text-hyperlink: #ff6400;
+  border-color: var(--color-text-hyperlink);
+}
+
+#rpg-ui-buttons button[data-id="gmroll"].active {
+  background: none;
+  background-color: #f2ca27;
+  color: var(--background);
+  box-shadow: var(--box-shadow-light);
+  --color-text-hyperlink: #ff6400;
+  border-color: var(--color-text-hyperlink);
+}
+
+#rpg-ui-buttons button[data-id="blindroll"].active {
+  background: none;
+  background-color: #e87e04;
+  color: var(--background);
+  box-shadow: var(--box-shadow-light);
+  --color-text-hyperlink: #ff6400;
+  border-color: var(--color-text-hyperlink);
+}
+
+#rpg-ui-buttons button[data-id="selfroll"].active {
+  background: none;
+  background-color: #ff6400;
+  color: var(--background);
+  box-shadow: var(--box-shadow-light);
+  --color-text-hyperlink: #ff6400;
+  border-color: var(--color-text-hyperlink);
+}
+
+#chat-controls {
+  padding: 0.5em 0;
+  align-items: center;
+}
